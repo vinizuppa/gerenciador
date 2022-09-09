@@ -3,7 +3,7 @@
     <div fxLayout="row" fxFlexFill fxLayout.lt-sm="column" fxLayoutGap="16px grid">
       <mat-form-field appearance="outline">
         <mat-label>Nome</mat-label>
-        <input matInput formControlName="nome" id="nome" name="nome">
+        <input matInput formControlName="nome" id="nome" name="nome" maxlength="150" minlength="3">
         <small class="text-danger" *ngIf="formUpdateUsuario.controls['nome'].invalid && (formUpdateUsuario.controls['nome'].dirty || formUpdateUsuario.controls['nome'].touched)">O nome deve ser informado</small>
       </mat-form-field>
 
@@ -26,7 +26,7 @@
 
       <mat-form-field appearance="outline">
         <mat-label>Documento</mat-label>
-        <input matInput formControlName="documento" id="documento" name="documento">
+        <input matInput formControlName="documento" id="documento" name="documento" maxlength="14" minlength="11">
         <small class="text-danger" *ngIf="formUpdateUsuario.controls['documento'].invalid && (formUpdateUsuario.controls['documento'].dirty || formUpdateUsuario.controls['documento'].touched)">O documento deve ser informado</small>
       </mat-form-field>
     </div>
@@ -34,13 +34,13 @@
     <div fxLayout="row" fxFlexFill fxLayout.lt-sm="column" fxLayoutGap="16px grid">
       <mat-form-field appearance="outline">
         <mat-label>Telefone</mat-label>
-        <input matInput mask="(00)0000-0000" placeholder="(00)0000-0000" formControlName="telefone" id="telefone" name="telefone">
+        <input matInput mask="(00)0000-0000" placeholder="(00)0000-0000" formControlName="telefone" id="telefone" name="telefone" maxlength="13" minlength="10">
         <small class="text-danger" *ngIf="formUpdateUsuario.controls['telefone'].invalid && (formUpdateUsuario.controls['telefone'].dirty || formUpdateUsuario.controls['telefone'].touched)">O telefone deve ser informado</small>
       </mat-form-field>
 
       <mat-form-field appearance="outline">
         <mat-label>Celular</mat-label>
-        <input matInput mask="(00)00000-0000" placeholder="(00)00000-0000" formControlName="celular" id="celular" name="celular">
+        <input matInput mask="(00)00000-0000" placeholder="(00)00000-0000" formControlName="celular" id="celular" name="celular" maxlength="14" minlength="11">
         <small class="text-danger" *ngIf="formUpdateUsuario.controls['celular'].invalid && (formUpdateUsuario.controls['celular'].dirty || formUpdateUsuario.controls['celular'].touched)">O celular deve ser informado</small>
       </mat-form-field>
     </div>
@@ -48,13 +48,13 @@
     <div fxLayout="row" fxFlexFill fxLayout.lt-sm="column" fxLayoutGap="16px grid">
         <mat-form-field appearance="outline">
           <mat-label>Rua</mat-label>
-          <input matInput formControlName="rua" id="rua" name="rua">
+          <input matInput formControlName="rua" id="rua" name="rua" maxlength="50" minlength="3">
           <small class="text-danger" *ngIf="formUpdateUsuario.controls['rua'].invalid && (formUpdateUsuario.controls['rua'].dirty || formUpdateUsuario.controls['rua'].touched)">A rua deve ser informado</small>
         </mat-form-field>
 
         <mat-form-field appearance="outline">
           <mat-label>Bairro</mat-label>
-          <input matInput formControlName="bairro" id="bairro" name="bairro">
+          <input matInput formControlName="bairro" id="bairro" name="bairro" maxlength="50" minlength="3">
           <small class="text-danger" *ngIf="formUpdateUsuario.controls['bairro'].invalid && (formUpdateUsuario.controls['bairro'].dirty || formUpdateUsuario.controls['bairro'].touched)">O bairro deve ser informado</small>
         </mat-form-field>
     </div>
@@ -62,13 +62,13 @@
     <div fxLayout="row" fxFlexFill fxLayout.lt-sm="column" fxLayoutGap="16px grid">
       <mat-form-field appearance="outline">
         <mat-label>Numero</mat-label>
-        <input matInput formControlName="numero" id="numero" name="numero">
+        <input matInput formControlName="numero" id="numero" name="numero" maxlength="4" minlength="1">
         <small class="text-danger" *ngIf="formUpdateUsuario.controls['numero'].invalid && (formUpdateUsuario.controls['numero'].dirty || formUpdateUsuario.controls['numero'].touched)">O numero deve ser informado</small>
       </mat-form-field>
 
       <mat-form-field appearance="outline">
         <mat-label>CEP</mat-label>
-        <input matInput mask="00000-000" placeholder="00000-000" formControlName="cep" id="cep" name="cep">
+        <input matInput mask="00000-000" placeholder="00000-000" formControlName="cep" id="cep" name="cep" maxlength="9" minlength="8">
         <small class="text-danger" *ngIf="formUpdateUsuario.controls['cep'].invalid && (formUpdateUsuario.controls['cep'].dirty || formUpdateUsuario.controls['cep'].touched)">O cep deve ser informado</small>
       </mat-form-field>
     </div>
