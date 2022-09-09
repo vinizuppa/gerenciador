@@ -1,0 +1,79 @@
+
+
+<div class="container">
+  <h1>Busca por Documento</h1>
+
+  <form class="row gy-2 gx-3 align-items-center" [formGroup]="form">
+    <div class="col-auto">
+      <input placeholder="Pesquisar por documento" type="text" class="form-control " id="documento" (keyup)="buscar($event)"/>
+    </div>
+  </form>
+
+  <div class="button">
+    <button class="voltar" mat-raised-button color="primary" [routerLink]="['/lista-usuarios']">Voltar</button>
+  </div>
+
+  <div class="card" style="width: 25rem;">
+    <div class="card-body">
+      <p class="card-text">
+        <strong>ID:</strong>
+          {{ usuario.id }}
+      </p>
+      <p class="card-text">
+        <strong>Nome:</strong>
+          {{ usuario.nome }}
+      </p>
+      <p class="card-text">
+        <strong>Tipo Doc:</strong>
+          {{ usuario.tipoDocumento }}
+      </p>
+      <p class="card-text">
+        <strong>Doc:</strong>
+          {{ usuario.documento }}
+      </p>
+      <p class="card-text">
+        <strong>Email:</strong>
+          {{ usuario.email }}
+      </p>
+      <p class="card-text">
+        <strong>Telefone:</strong>
+          {{ usuario.telefone }}
+      </p>
+      <p class="card-text">
+        <strong>Celular:</strong>
+          {{ usuario.celular }}
+      </p>
+      <p class="card-text">
+        <strong>Data Cadastro:</strong>
+          {{ usuario.dataCadastro }}
+      </p>
+      <p class="card-text">
+        <strong>Status:</strong>
+          {{ usuario.clienteStatus }}
+      </p>
+      <hr>
+      <p class="card-text">
+        <strong>Rua:</strong>
+          {{ usuario.endereco.rua }}
+      </p>
+      <p class="card-text">
+        <strong>Bairro:</strong>
+          {{ usuario.endereco.bairro }}
+      </p>
+      <p class="card-text">
+        <strong>Número:</strong>
+          {{ usuario.endereco.numero }}
+      </p>
+      <p class="card-text">
+        <strong>Cep:</strong>
+          {{ usuario.endereco.cep }}
+      </p>
+      <p class="card-text">
+        <strong>Cidade:</strong>
+          {{ usuario.endereco.cidade }}
+      </p>
+    </div>
+  </div>
+</div>
+
+

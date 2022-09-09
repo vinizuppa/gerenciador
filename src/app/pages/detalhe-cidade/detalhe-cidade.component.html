@@ -1,0 +1,22 @@
+<div class="container">
+  <h1>Detalhes</h1>
+  <div class="button">
+    <button mat-raised-button color="primary" [routerLink]="['/lista-cidades']">Voltar</button>
+  </div>
+  <div class="card" style="width: 25rem;">
+    <div class="card-body">
+      <p class="card-text">
+        <strong>ID:</strong>
+          {{ cidade.id }}
+      </p>
+      <p class="card-text">
+        <strong>Nome:</strong>
+          {{ cidade.nome }}
+      </p>
+      <p class="card-text">
+        <strong>Uf:</strong>
+          {{ cidade.uf.nome }}
+      </p>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,29 @@
+<mat-card class="card">
+  <form class="formCadCidade" [formGroup]="formCadCidade">
+    <div fxLayout="row" fxFlexFill fxLayout.lt-sm="column" fxLayoutGap="16px grid">
+      <mat-form-field class="full-width" appearance="outline">
+        <mat-label>Nome</mat-label>
+        <input matInput formControlName="nome" id="nome" name="nome">
+        <small class="text-danger" *ngIf="formCadCidade.controls['nome'].invalid && (formCadCidade.controls['nome'].dirty || formCadCidade.controls['nome'].touched)">O nome deve ser informado</small>
+      </mat-form-field>
+
+      <mat-form-field appearance="outline">
+        <mat-label>Uf</mat-label>
+        <mat-select formControlName="ufId">
+          <mat-option *ngFor="let uf of ufs" [value]="uf.id">
+            {{uf.nome}}
+          </mat-option>
+        </mat-select>
+        <small class="text-danger" *ngIf="formCadCidade.controls['ufId'].invalid && (formCadCidade.controls['ufId'].dirty || formCadCidade.controls['ufId'].touched)">A Uf deve ser informado</small>
+      </mat-form-field>
+    </div>
+    <div fxLayout="row" fxFlexFill fxLayout.lt-sm="column" fxLayoutGap="16px">
+      <div class="submit-button">
+        <button mat-flat-button color="primary" (click)="novaCidade()">
+          Cadastrar
+        </button>
+      </div>
+    </div>
+  </form>
+</mat-card>
+

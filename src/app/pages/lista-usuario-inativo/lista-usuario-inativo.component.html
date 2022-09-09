@@ -1,0 +1,39 @@
+<div class="container">
+  <h1>Lista Usuários Inativos</h1>
+  <button class="btn btn-success" type="button" (click)="exportExcel()"><i class="fas fa-file-excel"></i>Exportar para Excel</button>
+  <table class="table table-striped table-hover table-bordered table-responsive">
+      <thead class="table-dark">
+            <tr>
+              <th>ID</th>
+              <th>Nome</th>
+              <th>Tipo Doc</th>
+              <th>Doc</th>
+              <th>Email</th>
+              <th>Telefone</th>
+              <th>Celular</th>
+              <th>Dt Cadastro</th>
+              <th>Status</th>
+              <th width="250px">Ação</th>
+            </tr>
+      </thead>
+      <tbody>
+            <tr *ngFor="let usuario of usuarios">
+              <td>{{ usuario.id }}</td>
+              <td>{{ usuario.nome }}</td>
+              <td>{{ usuario.tipoDocumento }}</td>
+              <td>{{ usuario.documento }}</td>
+              <td>{{ usuario.email }}</td>
+              <td>{{ usuario.telefone }}</td>
+              <td>{{ usuario.celular }}</td>
+              <td>{{ usuario.dataCadastro }}</td>
+              <td>{{ usuario.clienteStatus }}</td>
+              <td>
+                <div class="example-button-row">
+                  <button mat-raised-button [routerLink]="['/detalhe-usuario/', usuario.id]">Detalhes</button>
+                  <button mat-raised-button color="primary" [routerLink]="['/editar-usuario/', usuario.id]">Editar</button>
+                </div>
+              </td>
+            </tr>
+      </tbody>
+  </table>
+</div>

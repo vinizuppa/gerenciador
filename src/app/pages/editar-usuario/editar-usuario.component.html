@@ -1,0 +1,104 @@
+<mat-card class="card">
+  <form class="formUpdateUsuario" [formGroup]="formUpdateUsuario">
+    <div fxLayout="row" fxFlexFill fxLayout.lt-sm="column" fxLayoutGap="16px grid">
+      <mat-form-field appearance="outline">
+        <mat-label>Nome</mat-label>
+        <input matInput formControlName="nome" id="nome" name="nome">
+        <small class="text-danger" *ngIf="formUpdateUsuario.controls['nome'].invalid && (formUpdateUsuario.controls['nome'].dirty || formUpdateUsuario.controls['nome'].touched)">O nome deve ser informado</small>
+      </mat-form-field>
+
+      <mat-form-field appearance="outline">
+        <mat-label>E-mail</mat-label>
+        <input matInput formControlName="email" id="email" name="email" type="email">
+        <small class="text-danger" *ngIf="formUpdateUsuario.controls['email'].invalid && (formUpdateUsuario.controls['email'].dirty || formUpdateUsuario.controls['email'].touched)">O email deve ser informado</small>
+      </mat-form-field>
+    </div>
+
+    <div fxLayout="row" fxFlexFill fxLayout.lt-sm="column" fxLayoutGap="16px grid">
+      <mat-form-field appearance="outline">
+        <mat-label>Tipo Documento</mat-label>
+        <mat-select formControlName="tipoDocumento" id="tipoDocumento" name="tipoDocumento">
+          <mat-option value="CPF">CPF</mat-option>
+          <mat-option value="CNPJ">CNPJ</mat-option>
+        </mat-select>
+        <small class="text-danger" *ngIf="formUpdateUsuario.controls['tipoDocumento'].invalid && (formUpdateUsuario.controls['tipoDocumento'].dirty || formUpdateUsuario.controls['tipoDocumento'].touched)">O Tipo Documento deve ser informado</small>
+      </mat-form-field>
+
+      <mat-form-field appearance="outline">
+        <mat-label>Documento</mat-label>
+        <input matInput formControlName="documento" id="documento" name="documento">
+        <small class="text-danger" *ngIf="formUpdateUsuario.controls['documento'].invalid && (formUpdateUsuario.controls['documento'].dirty || formUpdateUsuario.controls['documento'].touched)">O documento deve ser informado</small>
+      </mat-form-field>
+    </div>
+
+    <div fxLayout="row" fxFlexFill fxLayout.lt-sm="column" fxLayoutGap="16px grid">
+      <mat-form-field appearance="outline">
+        <mat-label>Telefone</mat-label>
+        <input matInput mask="(00)0000-0000" placeholder="(00)0000-0000" formControlName="telefone" id="telefone" name="telefone">
+        <small class="text-danger" *ngIf="formUpdateUsuario.controls['telefone'].invalid && (formUpdateUsuario.controls['telefone'].dirty || formUpdateUsuario.controls['telefone'].touched)">O telefone deve ser informado</small>
+      </mat-form-field>
+
+      <mat-form-field appearance="outline">
+        <mat-label>Celular</mat-label>
+        <input matInput mask="(00)00000-0000" placeholder="(00)00000-0000" formControlName="celular" id="celular" name="celular">
+        <small class="text-danger" *ngIf="formUpdateUsuario.controls['celular'].invalid && (formUpdateUsuario.controls['celular'].dirty || formUpdateUsuario.controls['celular'].touched)">O celular deve ser informado</small>
+      </mat-form-field>
+    </div>
+
+    <div fxLayout="row" fxFlexFill fxLayout.lt-sm="column" fxLayoutGap="16px grid">
+        <mat-form-field appearance="outline">
+          <mat-label>Rua</mat-label>
+          <input matInput formControlName="rua" id="rua" name="rua">
+          <small class="text-danger" *ngIf="formUpdateUsuario.controls['rua'].invalid && (formUpdateUsuario.controls['rua'].dirty || formUpdateUsuario.controls['rua'].touched)">A rua deve ser informado</small>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+          <mat-label>Bairro</mat-label>
+          <input matInput formControlName="bairro" id="bairro" name="bairro">
+          <small class="text-danger" *ngIf="formUpdateUsuario.controls['bairro'].invalid && (formUpdateUsuario.controls['bairro'].dirty || formUpdateUsuario.controls['bairro'].touched)">O bairro deve ser informado</small>
+        </mat-form-field>
+    </div>
+
+    <div fxLayout="row" fxFlexFill fxLayout.lt-sm="column" fxLayoutGap="16px grid">
+      <mat-form-field appearance="outline">
+        <mat-label>Numero</mat-label>
+        <input matInput formControlName="numero" id="numero" name="numero">
+        <small class="text-danger" *ngIf="formUpdateUsuario.controls['numero'].invalid && (formUpdateUsuario.controls['numero'].dirty || formUpdateUsuario.controls['numero'].touched)">O numero deve ser informado</small>
+      </mat-form-field>
+
+      <mat-form-field appearance="outline">
+        <mat-label>CEP</mat-label>
+        <input matInput mask="00000-000" placeholder="00000-000" formControlName="cep" id="cep" name="cep">
+        <small class="text-danger" *ngIf="formUpdateUsuario.controls['cep'].invalid && (formUpdateUsuario.controls['cep'].dirty || formUpdateUsuario.controls['cep'].touched)">O cep deve ser informado</small>
+      </mat-form-field>
+    </div>
+
+    <div fxLayout="row" fxFlexFill fxLayout.lt-sm="column" fxLayoutGap="16px grid">
+      <mat-form-field appearance="outline">
+        <mat-label>Cidade</mat-label>
+        <mat-select formControlName="cidadeId">
+          <mat-option *ngFor="let cidade of cidades" [value]="cidade.id">
+            {{cidade.nome}}
+          </mat-option>
+        </mat-select>
+        <small class="text-danger" *ngIf="formUpdateUsuario.controls['cidadeId'].invalid && (formUpdateUsuario.controls['cidadeId'].dirty || formUpdateUsuario.controls['cidadeId'].touched)">A cidade deve ser informado</small>
+      </mat-form-field>
+      <mat-form-field appearance="outline">
+        <mat-label>Status</mat-label>
+        <mat-select formControlName="clienteStatus">
+          <mat-option value="ATIVO">ATIVO</mat-option>
+          <mat-option value="INATIVO">INATIVO</mat-option>
+        </mat-select>
+        <small class="text-danger" *ngIf="formUpdateUsuario.controls['clienteStatus'].invalid && (formUpdateUsuario.controls['clienteStatus'].dirty || formUpdateUsuario.controls['clienteStatus'].touched)">O sstatus deve ser informado</small>
+      </mat-form-field>
+    </div>
+
+
+    <div fxLayout="row" fxFlexFill fxLayout.lt-sm="column" fxLayoutGap="16px">
+      <button mat-flat-button color="primary" (click)="updateUsuario()">
+        Atualizar
+      </button>
+    </div>
+  </form>
+
+</mat-card>

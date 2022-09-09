@@ -1,0 +1,101 @@
+<mat-card class="card">
+  <form class="formCadUsuario" [formGroup]="formCadUsuario">
+    <div fxLayout="row" fxFlexFill fxLayout.lt-sm="column" fxLayoutGap="16px grid">
+      <mat-form-field appearance="outline">
+        <mat-label>Nome</mat-label>
+        <input matInput formControlName="nome" id="nome" name="nome">
+        <small class="text-danger" *ngIf="formCadUsuario.controls['nome'].invalid && (formCadUsuario.controls['nome'].dirty || formCadUsuario.controls['nome'].touched)">O nome deve ser informado</small>
+      </mat-form-field>
+
+      <mat-form-field appearance="outline">
+        <mat-label>E-mail</mat-label>
+        <input matInput formControlName="email" id="email" name="email" type="email">
+        <small class="text-danger" *ngIf="formCadUsuario.controls['email'].invalid && (formCadUsuario.controls['email'].dirty || formCadUsuario.controls['email'].touched)">O email deve ser informado</small>
+      </mat-form-field>
+    </div>
+
+    <div fxLayout="row" fxFlexFill fxLayout.lt-sm="column" fxLayoutGap="16px grid">
+      <mat-form-field appearance="outline">
+        <mat-label>Tipo Documento</mat-label>
+        <mat-select formControlName="tipoDocumento" id="tipoDocumento" name="tipoDocumento">
+          <mat-option value="CPF">CPF</mat-option>
+          <mat-option value="CNPJ">CNPJ</mat-option>
+        </mat-select>
+        <small class="text-danger" *ngIf="formCadUsuario.controls['tipoDocumento'].invalid && (formCadUsuario.controls['tipoDocumento'].dirty || formCadUsuario.controls['tipoDocumento'].touched)">O Tipo Documento deve ser informado</small>
+      </mat-form-field>
+
+      <mat-form-field appearance="outline">
+        <mat-label>Documento</mat-label>
+        <input matInput formControlName="documento" id="documento" name="documento">
+        <small class="text-danger" *ngIf="formCadUsuario.controls['documento'].invalid && (formCadUsuario.controls['documento'].dirty || formCadUsuario.controls['documento'].touched)">O documento deve ser informado</small>
+      </mat-form-field>
+    </div>
+
+    <div fxLayout="row" fxFlexFill fxLayout.lt-sm="column" fxLayoutGap="16px grid">
+      <mat-form-field appearance="outline">
+        <mat-label>Telefone</mat-label>
+        <input matInput mask="(00)0000-0000" placeholder="(00)0000-0000" formControlName="telefone" id="telefone" name="telefone">
+        <small class="text-danger" *ngIf="formCadUsuario.controls['telefone'].invalid && (formCadUsuario.controls['telefone'].dirty || formCadUsuario.controls['telefone'].touched)">O telefone deve ser informado</small>
+      </mat-form-field>
+
+      <mat-form-field appearance="outline">
+        <mat-label>Celular</mat-label>
+        <input matInput mask="(00)00000-0000" placeholder="(00)00000-0000" formControlName="celular" id="celular" name="celular">
+        <small class="text-danger" *ngIf="formCadUsuario.controls['celular'].invalid && (formCadUsuario.controls['celular'].dirty || formCadUsuario.controls['celular'].touched)">O celular deve ser informado</small>
+      </mat-form-field>
+    </div>
+
+    <div fxLayout="row" fxFlexFill fxLayout.lt-sm="column" fxLayoutGap="16px grid">
+        <mat-form-field appearance="outline">
+          <mat-label>Rua</mat-label>
+          <input matInput formControlName="rua" id="rua" name="rua">
+          <small class="text-danger" *ngIf="formCadUsuario.controls['rua'].invalid && (formCadUsuario.controls['rua'].dirty || formCadUsuario.controls['rua'].touched)">A rua deve ser informado</small>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+          <mat-label>Bairro</mat-label>
+          <input matInput formControlName="bairro" id="bairro" name="bairro">
+          <small class="text-danger" *ngIf="formCadUsuario.controls['bairro'].invalid && (formCadUsuario.controls['bairro'].dirty || formCadUsuario.controls['bairro'].touched)">O bairro deve ser informado</small>
+        </mat-form-field>
+    </div>
+
+    <div fxLayout="row" fxFlexFill fxLayout.lt-sm="column" fxLayoutGap="16px grid">
+      <mat-form-field appearance="outline">
+        <mat-label>Numero</mat-label>
+        <input matInput formControlName="numero" id="numero" name="numero">
+        <small class="text-danger" *ngIf="formCadUsuario.controls['numero'].invalid && (formCadUsuario.controls['numero'].dirty || formCadUsuario.controls['numero'].touched)">O numero deve ser informado</small>
+      </mat-form-field>
+
+      <mat-form-field appearance="outline">
+        <mat-label>CEP</mat-label>
+        <input matInput mask="00000-000" placeholder="00000-000" formControlName="cep" id="cep" name="cep">
+        <small class="text-danger" *ngIf="formCadUsuario.controls['cep'].invalid && (formCadUsuario.controls['cep'].dirty || formCadUsuario.controls['cep'].touched)">O cep deve ser informado</small>
+      </mat-form-field>
+    </div>
+
+    <div fxLayout="row" fxFlexFill fxLayout.lt-sm="column" fxLayoutGap="16px grid">
+      <mat-form-field appearance="outline">
+        <mat-label>Cidade</mat-label>
+        <mat-select formControlName="cidadeId">
+          <mat-option *ngFor="let cidade of cidades" [value]="cidade.id">
+            {{cidade.nome}}
+          </mat-option>
+        </mat-select>
+        <small class="text-danger" *ngIf="formCadUsuario.controls['cidadeId'].invalid && (formCadUsuario.controls['cidadeId'].dirty || formCadUsuario.controls['cidadeId'].touched)">A cidade deve ser informado</small>
+      </mat-form-field>
+      <mat-form-field appearance="outline">
+        <mat-label>Senha</mat-label>
+        <input matInput formControlName="senha" id="senha" name="senha" type="password">
+        <small class="text-danger" *ngIf="formCadUsuario.controls['senha'].invalid && (formCadUsuario.controls['senha'].dirty || formCadUsuario.controls['senha'].touched)">A senha deve ser informado</small>
+      </mat-form-field>
+    </div>
+    <div fxLayout="row" fxFlexFill fxLayout.lt-sm="column" fxLayoutGap="16px">
+      <button mat-flat-button color="primary" (click)="novoUsuario()">
+        Cadastrar
+      </button>
+    </div>
+  </form>
+
+</mat-card>
+
+

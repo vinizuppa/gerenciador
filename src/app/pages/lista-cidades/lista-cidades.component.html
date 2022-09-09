@@ -1,0 +1,26 @@
+<div class="container">
+  <h1>Lista Cidades</h1>
+  <table class="table table-striped table-hover table-bordered table-responsive">
+      <thead class="table-dark">
+            <tr>
+              <th>ID</th>
+              <th>Nome</th>
+              <th>Uf</th>
+              <th width="250px">Ação</th>
+            </tr>
+      </thead>
+      <tbody>
+            <tr *ngFor="let cidade of cidades">
+              <td>{{ cidade.id }}</td>
+              <td>{{ cidade.nome }}</td>
+              <td>{{ cidade.uf.nome }}</td>
+              <td>
+                <div class="example-button-row">
+                  <button mat-raised-button [routerLink]="['/detalhe-cidade/', cidade.id]">Detalhes</button>
+                  <button mat-raised-button color="primary" [routerLink]="['/editar-cidade/', cidade.id]">Editar</button>
+                </div>
+              </td>
+            </tr>
+      </tbody>
+  </table>
+</div>

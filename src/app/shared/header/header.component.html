@@ -1,0 +1,67 @@
+<mat-toolbar color="primary">
+  <button mat-icon-button [matMenuTriggerFor]="opcoes">
+    <mat-icon>menu</mat-icon>
+  </button>
+
+  <mat-menu #opcoes="matMenu">
+    <button mat-menu-item [matMenuTriggerFor]="cliente">
+      <mat-icon color="primary">person</mat-icon>
+      <span>Clientes</span>
+    </button>
+    <button mat-menu-item [matMenuTriggerFor]="cidade">
+      <mat-icon color="primary">location_city</mat-icon>
+      <span>Cidades</span>
+    </button>
+  </mat-menu>
+
+  <mat-menu #cliente="matMenu">
+    <button mat-menu-item routerLink="/novo-usuario">
+      <mat-icon color="primary">add_circle</mat-icon>
+      <span>Novo</span>
+    </button>
+    <button mat-menu-item [matMenuTriggerFor]="listar">
+      <mat-icon color="primary">list_alt</mat-icon>
+      <span>Listar</span>
+    </button>
+    <button mat-menu-item routerLink="/busca-documento">
+      <mat-icon color="primary">search</mat-icon>
+      <span>Buscar Usuário</span>
+    </button>
+  </mat-menu>
+
+  <mat-menu #listar="matMenu">
+    <button mat-menu-item routerLink="/lista-usuario-ativo">
+      <mat-icon color="primary">thumb_up_alt</mat-icon>
+      <span>Ativos</span>
+    </button>
+    <button mat-menu-item routerLink="/lista-usuario-inativo">
+      <mat-icon color="primary">thumb_down_alt</mat-icon>
+      <span>Inativos</span>
+    </button>
+    <button mat-menu-item routerLink="/lista-usuarios">
+      <mat-icon color="primary">list_alt</mat-icon>
+      <span>Todos</span>
+    </button>
+  </mat-menu>
+
+  <mat-menu #cidade="matMenu">
+    <button mat-menu-item routerLink="/nova-cidade">
+      <mat-icon color="primary">add_circle</mat-icon>
+      <span>Novo</span>
+    </button>
+    <button mat-menu-item routerLink="/lista-cidades">
+      <mat-icon color="primary">list_alt</mat-icon>
+      <span>Listar</span>
+    </button>
+  </mat-menu>
+
+  <mat-menu #uf="matMenu">
+    <button mat-menu-item routerLink="/lista-ufs">
+      <mat-icon color="primary">list_alt</mat-icon>
+      <span>Listar</span>
+    </button>
+  </mat-menu>
+
+  <span>Gerenciador de Clientes</span>
+
+</mat-toolbar>
